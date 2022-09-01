@@ -1,0 +1,33 @@
+<button routerLink="/">Previous Question</button>
+<button routerLink="/interaction">Next Question</button>
+<h3>Q2: Counter Function</h3>
+<p><strong>Ans:</strong> The below function is my code and its running right now please open the console and view the result, THANK YOU.</p>
+<p>You can also change the values and test the code by clicking the run code button</p>
+<button (click)="runCode()">Run code</button><br><br>
+<button (click)="clear()">Clear colsole</button><br><br>
+
+<code>function counter(value = 0){{'{'}}</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;var currentValue = value;</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;var incrementCurrentValue = function(){{'{'}}</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;currentValue++;</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;{{'}'}}</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;var returnCurrentValue = function(){{'{'}}</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(currentValue);</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;{{'}'}}</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;return [returnCurrentValue,incrementCurrentValue];</code><br>
+<code>{{'}'}}</code><br>
+<code>let [getA,nextA]= counter(</code><input type="number" [(ngModel)]="firstTestInput"/><code>);</code><br>
+<code>getA(); // output is {{firstTestInput}}</code><br>
+<code>nextA();</code><br>
+<code>getA(); // output is {{firstTestInput+1}}</code><br>
+<code>let [getB, nextB]= counter(</code><input type="number" [(ngModel)]="secondTestInput"/><code>);</code><br>
+<code>nextB();</code><br>
+<code>getA(); // output is {{firstTestInput+1}}</code><br>
+<code>getB(); // output is {{secondTestInput+1}}</code><br>
+<code>nextA();</code><br>
+<code>getA(); // output is {{firstTestInput+2}}</code><br>
+<code>getB(); // output is {{secondTestInput+1}}</code><br>
+
+
+
+

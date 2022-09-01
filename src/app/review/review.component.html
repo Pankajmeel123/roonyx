@@ -1,0 +1,33 @@
+<button routerLink="/interaction">Previous Question</button>
+<button routerLink="/">Next Question</button>
+<h3>Q4: Code Review</h3>
+<div style="display:flex;justify-content: space-between;">
+	<div>
+		<img style="height: 280px;" src="/assets/1.png"><br>
+		<img style="height: 90px;" src="/assets/2.png">
+	</div>
+	<div style="background: #eee;padding: 20px;margin: 0 10px;">
+		<p>
+			<strong>Ans:</strong><br> 
+			<strong>Wrong about the code?</strong><br>
+			1. <b>AuthService</b> can not be used as its not imported in the component.<br>
+			2. We can not use this._authService.user.subscribe because of the able point.<br>
+			3. In the template the div tag is not closed, though it will not give any error but its recomended to close tags.<br>
+			4. Insted of div closing tag there is a closing tag for button that will give 'Unexpected closing tag' error.<br>
+			5. If we suppose that <b>AuthService</b> is imported in the component then its not wise to call an service methord in constructor.<br><br>
+			<strong>How can we improve it?</strong><br>
+			1. <b>AuthService</b> should be created and imported in the component.<br>
+			2. Always close tags<br>
+			3. Remove the closing button tag<br>
+			4. Call to the service method should be done in lifecycle hook of angular like ngOnInit().<br>
+			5. Corrected Code:<br>
+			<img style="height: 350px;" src="/assets/3.png"><br><br>
+			<strong>What benefits and drawbacks of each method?</strong><br>
+			1. I dont think that there is any benifit or making service calls in constructure.<br>
+			2. We should not call the services in custructor as it put load on the component, and sometimes its even impossiable to use constructor to make an service or http call as it make use @input variable or someting like that. Constructor are only used for minimal work adding constructor parameters.<br>
+			3. We can make the _user variable as public then we dont need the getUserName() at all and can also use other properties od user as well like age and sex if they are present.<br>
+			4. The benifit of making _user variable as private is that it is not accessable outside of the component not even on the template so we can protect the data.<br>
+			5. If a service call is very heavy or there are many calculation done in the onInit() of on the service response then we should not use ngOnInit() as well we should try to use ngAfterContentInit() in that case.<br>
+		</p>
+	</div>
+</div>

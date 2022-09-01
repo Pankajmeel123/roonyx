@@ -1,0 +1,46 @@
+<button routerLink="/counter">Previous Question</button>
+<button routerLink="/review">Next Question</button>
+<h3>Q3: Component Interaction</h3>
+<p>
+	<strong>Ans:</strong> 
+	For the Component Interaction we have two components <strong>interaction</strong> and <strong>interaction-with</strong> components that you can find in the code and the working can be seen below.<br>
+</p>
+<div style="display: flex;justify-content: space-between;">
+	<div style="background: #eee;padding: 20px;margin: 0 10px;">
+		<h3 style="margin-bottom: 0px;">Component A</h3>
+		<i>When we click on send data button the input value is transfered to Component B and an event is trigred that will call a funtion, so data is also sent and funtion is also called.</i><hr>
+		<input #input/>
+		<button (click)="dataToInteractionWithComponent = input.value;clear(input)">Send data</button><hr>
+		<p *ngFor="let data of dataReceivedFromInteractionWithComponent">{{data}}</p>
+	</div>
+	<div style="background: #eee;padding: 20px;margin: 0 10px;">
+		<app-interaction-with [dataFormInteractionComponent]="dataToInteractionWithComponent" (eventToSendData)="dataRecived($event)"></app-interaction-with>
+	</div>
+</div>
+<p>
+	<strong>What options do we have to establish such communication?,<br>For each option describe what are the pros and cons of this solution?,<br>For each option describe what are the cases the solution fits best?</strong><br><br>
+	1. Binding using @Input & @Output.<br>
+	--- <strong>PROS:</strong><br>
+	------ It is the most basic way to communicate between components.<br>
+	------ Binding is the cleanest and simplest one and most easily maintainable.<br>
+	--- <strong>CONS:</strong><br>
+	------ Dont know any.<br>
+	--- <strong>BEST USECASE:</strong><br>
+	------ Both way communication.<br><br>
+	2. Reference using @ViewChild & @ContentChild.<br>
+	--- <strong>PROS:</strong><br>
+	------ It is more easy and flexible way of communication.<br>
+	--- <strong>CONS:</strong><br>
+	------ It is a problem for maintenance.<br>
+	------ We cannot benefit from the Angular lifecycle hooks and we have to manage the state change manually.<br>
+	--- <strong>BEST USECASE:</strong><br>
+	------ One way communication.<br><br>
+	3. By creating Service.<br>
+	--- <strong>PROS:</strong><br>
+	------ Dont need any linking between the components for communication.<br>
+	--- <strong>CONS:</strong><br>
+	------ have to maintain large amount of code and an aditional service also put lode on the application.<br>
+	--- <strong>BEST USECASE:</strong><br>
+	------ Communication b/w components with no relation.<br>
+</p>
+

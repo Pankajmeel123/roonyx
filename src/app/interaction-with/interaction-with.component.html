@@ -1,0 +1,5 @@
+<h3 style="margin-bottom: 0px;">Component B</h3>
+<i>When we click on send data button an event is triggered and a function is called on Component A with gets the data from event that is triggered on this component, so data is also sent and funtion is also called.</i><hr>
+<input #input/>
+<button (click)="sendDataToInterationComponent(input.value,input)">Send data</button><hr>
+<p  *ngFor="let data of finalData">{{data}}</p>
